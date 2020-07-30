@@ -115,14 +115,22 @@ Your function should accept:
 For example, removeFlavorByName(originalFlavors, "Vanilla") would return an array with the length 30 including all of the flavors except Vanilla. 
 
 Hint: You can use .splice() for this
-
 */
 
-function removeFlavorByName(/*code here*/) {
-  /*code here*/
+function removeFlavorByName(arrayName, flavorToRemove) {
+  for (i = 0; i < arrayName.length; i++) {
+    if (arrayName[i] === flavorToRemove) {
+      arrayName.splice(i, 1);
+    }
+  }
+  return arrayName;
 }
+removeFlavorByName(originalFlavors, "Banana Nut Fudge");
+console.log(`after splice ${originalFlavors}`);
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
+
+SPREAD OPERATOR
 
 Your function should accept: 
 
